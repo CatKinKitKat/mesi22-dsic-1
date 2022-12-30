@@ -1,0 +1,68 @@
+% !TeX program = XeLaTeX
+% !TeX encoding = UTF-8
+% !TeX spellcheck = pt_PT
+% !TeX root = main
+\documentclass[10pt,a4paper,final,twoside,openright]{report}
+\usepackage[portuguese]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath} %TimesNewRoman
+\usepackage[backend=biber,citestyle=numeric,sorting=none,style=ieee]{biblatex}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[svgnames]{xcolor}
+\usepackage{listings}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true,allcolors=ipbbrown]{hyperref}
+\usepackage{adjustbox}
+\usepackage[pagestyles]{titlesec}
+\usepackage[final]{pdfpages}
+\usepackage{placeins}
+\usepackage{acro}
+
+\addbibresource{main.bib}
+
+\input{glossary.tex}
+
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+\newpagestyle{mystyle}
+{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
+\pagestyle{mystyle}
+
+% school colours
+\definecolor{ipbgreen}{RGB}{166,204,59}
+\definecolor{ipbbrown}{RGB}{153,80,42}
+\definecolor{estigred}{RGB}{150,0,24}
+
+\title{
+  \includegraphics[scale=0.5]{resources/ipbeja_logo.png}\\[0.5cm]
+  Direito na Segurança Informática e no Cibercrime\\[0.5cm]
+  Artigo sobre Regulação da Cibersegurança e Cibercrime\\[0.5cm]
+  Com foco em Portugal (Estado-Membro da União Europeia)\\[0.5cm]
+} % Doc name
+\author{Gonçalo Amaro -- 1744} % Doc's author/s
+\date{30 de Dezembro, 2022} % Doc date
+
+\begin{document}
+
+\maketitle
+
+\printacronyms[name=Lista de Abreviaturas, display=all, sort=true]
+
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+}
+
+{
+  \hypersetup{linkcolor=black}
+  \listoffigures
+%  \listoftables
+}
+
+
+\nocite{*}
+\printbibliography
+
+\end{document}
